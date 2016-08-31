@@ -1,8 +1,6 @@
 package br.com.PersistStruts.actions;
 
 
-import javax.inject.Inject;
-
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.opensymphony.xwork2.ActionSupport;

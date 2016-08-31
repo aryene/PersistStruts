@@ -15,7 +15,7 @@
 	 <action name="telaCliente">
 			<result>/jsp/cliente.jsp</result>
 		</action>
-  
+		
    </package>
    
    <include file="struts-cliente.xml" />
