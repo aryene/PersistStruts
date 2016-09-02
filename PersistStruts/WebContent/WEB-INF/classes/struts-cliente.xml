@@ -11,6 +11,18 @@
       <action name="cadastraCliente" method="cadastraCliente"  class="br.com.PersistStruts.actions.ClienteAction">
             <result name="success">/jsp/cliente.jsp</result>
       </action>
+      
+      <action name="pesquisarClienteNome" method="pesquisarClienteNome"  class="br.com.PersistStruts.actions.ClienteAction">
+            <result name="success">/jsp/cliente.jsp</result>
+      </action>
+      
+       <action name="deleteCliente" method="deleteCliente"  class="br.com.PersistStruts.actions.ClienteAction">
+            <result name="success">/jsp/cliente.jsp</result>
+      </action>
+      
+       <action name="atualizaCliente" method="atualizaCliente"  class="br.com.PersistStruts.actions.ClienteAction">
+            <result name="success">/jsp/cliente.jsp</result>
+      </action>
    
    </package>
 </struts>

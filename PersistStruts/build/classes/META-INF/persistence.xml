@@ -11,13 +11,15 @@
    <provider>org.hibernate.ejb.HibernatePersistence</provider> 
 
    <!-- entidade mapeada -->
-   <class>br.com.PersistStruts.modelo.Cliente</class>
- 
-   
+    <class>br.com.PersistStruts.modelo.Cliente</class>
+   <class>br.com.PersistStruts.modelo.Fornecedor</class>
+   <class>br.com.PersistStruts.modelo.ItemPedido</class>
+   <class>br.com.PersistStruts.modelo.Pedido</class>
+   <class>br.com.PersistStruts.modelo.Produto</class>
    <exclude-unlisted-classes />
- <property name="eclipselink.logging.level" value="INFO" />
+ <property name="eclipselink.logging.level" value="DEBUG" />
   <property name="eclipselink.target-database" value="MySQL" />
-  <property name="eclipselink.logging.level" value="INFO" />
+  <property name="eclipselink.logging.level" value="DEBUG" />
     
    
   <!--  <properties>

@@ -11,13 +11,20 @@
       <action name="inicio">
 			<result>/index.jsp</result>
 		</action>
+			
+		<action name="telaCliente" method="telaCliente"  class="br.com.PersistStruts.actions.ClienteAction">
+            <result name="success">/jsp/cliente.jsp</result>
+      </action>
 		
-	 <action name="telaCliente">
-			<result>/jsp/cliente.jsp</result>
+		
+		 <action name="telaFornecedor"  >
+			<result>/jsp/fornecedor.jsp</result>
 		</action>
 		
    </package>
    
    <include file="struts-cliente.xml" />
+   
+   <include file="struts-fornecedor.xml" />
    
 </struts>

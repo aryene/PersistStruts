@@ -23,63 +23,112 @@
 
 <div class="container">
 <br>
-<s:form namespace="/cliente"  action="cadastraCliente" cssClass="form-horizontal" >
+<h2>Cadastra Cliente</h2>
+
+<s:form namespace="/cliente"  action="cadastraCliente" cssClass="form-horizontal well" theme="simple">
  <div class="form-group">
   	<label class="col-sm-2 control-label">Nome:</label>
  <div class="col-sm-10">
-     <input type="text" name="cliente.nome" required="required" class="form-control" > 
-<%--       <s:textfield  type="text" name="cliente.nome" required="required" cssClass="form-control" />
- --%>  </div>
+    <s:textfield  type="text" name="cliente.nome" required="required" cssClass="form-control" />
+</div>
 </div>
  <div class="form-group">
   	<label class="col-sm-2 control-label">CPF:</label>
  <div class="col-sm-10">
-      <input type="text" name="cliente.cpf"  class="form-control" >
+          <s:textfield  type="text" name="cliente.cpf" cssClass="form-control" />
+      
   </div>
 </div>	
  <div class="form-group">
   	<label class="col-sm-2 control-label">CNPJ:</label>
  <div class="col-sm-10">
-      <input type="text" name="cnpj" class="form-control" >
+     <s:textfield  type="text" name="cliente.cnpj" cssClass="form-control" />
   </div>
 </div>	
  <div class="form-group">
   	<label class="col-sm-2 control-label">Tipo Cliente:</label>
  <div class="col-sm-10">
-      <input type="text" name="tipoCliente" class="form-control" >
+      <s:textfield  type="text" name="cliente.tipoCliente" required="required" cssClass="form-control" />
   </div>
 </div>	
 <div align="center">
+<input type="hidden" value="${cliente.id}" name="cliente.id">
 <input type="submit" class="btn btn-primary" value="Cadastra Usuario "  >
-<a href="index" class="btn btn-success" >Voltar </a>
+<a href="inicio" class="btn btn-success" >Voltar </a>
 </div>
+
 </s:form>
 	
-
+<s:actionmessage cssClass="alert alert-success" />
 	 	
-	<!-- <form action="pesquisarCliente" method="post">
-			<input type="submit" value="Pesquisar Geral"  >
-			
-	</form>  -->
 
 	<br><br>
+
+		<%-- <s:form namespace="/cliente" action="pesquisarClienteNome">
+			<div class="input-group" align="center">
+				<input type="text" class="form-control" name="cliente.nome"
+					placeholder="Nome Cliente">
+				<div class="input-group-btn">
+					<button class="btn btn-default glyphicon glyphicon-search"
+						type="submit"></button>
+				</div>
+			</div>
+		</s:form> --%>
+
+
+
 	
-	<!-- <form action="pesquisarClienteNome" method="post">
-		Nome:<input type="text" required="required" name="nome" >
-			<input type="submit" value="Pesquisar"  >
-			
-	</form>  -->
-	<form action="pesquisarClienteNome"   method="post">
-	<div class="input-group" align="center">
-      <input type="text" class="form-control" name="nome" placeholder="Nome Cliente">
-      <div class="input-group-btn">
-        <button class="btn btn-default glyphicon glyphicon-search" type="submit"></button> 
-      </div>
-</div>
-	</form>
+<table class="table table-bordered table-hover">
+ <thead>
+        <tr>
+          <th>id</th>
+          <th>Nome</th>
+           <th>CPF</th>
+          <th style="text-align: center">Deletar</th>
+          <th style="text-align: center">Editar</th>
+        </tr>
+      </thead>
+      <tbody>
+      <c:forEach items="${listaCliente}" var="c" >
+		<tr>
+      	<td>
+      		${c.id}
+      	</td>
+      	<td >
+      	${c.nome}
+      	</td>
+      	 	<td >
+      	${c.cpf}
+      	</td>
+      	<td style="text-align: center">
+      	<s:form action="deleteCliente" namespace="/cliente">
+      	<input type="hidden" value="${c.id}" name="cliente.id">
+      	<button type="submit" class="btn btn-danger" value="del" ><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+      	</s:form>
+      	</td>
+      	<td style="text-align: center">
+      	<s:form action="atualizaCliente" namespace="/cliente">
+      	<input type="hidden" value="${c.id}" name="cliente.id">
+      	<button type="submit" class="btn btn-success"  ><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>
+      	</s:form>
+      	</td>
+      	
+      </tr>
+		</c:forEach>
 	
-	<br><br>
-	
+      
+      
+      
+      
+      </tbody>
+
+
+
+
+</table>
+
+
+		
 		
 	
 	</div> 
