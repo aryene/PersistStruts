@@ -3,11 +3,10 @@ package br.com.PersistStruts.servicos;
 import java.util.List;
 
 import javax.inject.Inject;
-import javax.inject.Named;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import br.com.PersistStruts.dao.ClienteDao;
 import br.com.PersistStruts.modelo.Cliente;
@@ -19,11 +18,10 @@ public class ClienteServico  {
 	ClienteDao clienteDao; 
 	
 	
-	
 	public String salvar(Cliente cliente){
 		String msg ="Cadastro Efetuado";
 		try {
-			clienteDao.salvar(cliente);
+			clienteDao.save(cliente);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -35,13 +33,22 @@ public class ClienteServico  {
 	}
 
 	public List<Cliente> pesquisarCliente(){
-		return clienteDao.buscar();
-
+		return clienteDao.findAll();
 	}
 
 	
 	public List<Cliente> pesquisarClienteNome(Cliente cliente){
-		return clienteDao.buscar(cliente);
+		return clienteDao.findByNamedQuery("Cliente.buscaNome",cliente.getNome());
+
+	}
+	
+	public Cliente pesquisarClienteId(Cliente cliente){
+		return clienteDao.findById(cliente.getId());
+
+	}
+	
+	public void deletarCliente(Cliente cliente){
+		 clienteDao.delete(cliente);
 
 	}
 

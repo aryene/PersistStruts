@@ -1,6 +1,8 @@
 package br.com.PersistStruts.actions;
 
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.opensymphony.xwork2.ActionSupport;
@@ -14,14 +16,42 @@ public class ClienteAction extends ActionSupport {
 	
 	private Cliente cliente;
 	
+	private List<Cliente> listaCliente;
+	
 	@Autowired
 	ClienteServico clienteServico;
-
-	public String cadastraCliente(){
-		this.clienteServico.salvar(this.getCliente());
-		System.out.println("passou");
+	
+	public String telaCliente(){
+		this.setListaCliente(this.clienteServico.pesquisarCliente());
 		return SUCCESS;
 	}
+
+	public String cadastraCliente(){
+		this.addActionMessage(this.clienteServico.salvar(this.getCliente()));
+		this.setListaCliente(this.clienteServico.pesquisarCliente());
+		return SUCCESS;
+	}
+	
+	public String pesquisarClienteNome(){
+		this.setListaCliente(this.clienteServico.pesquisarClienteNome(this.getCliente()));
+		return SUCCESS;
+	}
+	
+	
+	public String deleteCliente(){
+		this.clienteServico.deletarCliente(this.getCliente());
+		this.setListaCliente(this.clienteServico.pesquisarCliente());
+		return SUCCESS;
+	}
+	
+	
+	public String atualizaCliente(){
+		this.setCliente(this.clienteServico.pesquisarClienteId(this.getCliente()));
+		this.setListaCliente(this.clienteServico.pesquisarCliente());
+		return SUCCESS;
+	}
+	
+	
 
 	public Cliente getCliente() {
 		return cliente;
@@ -31,6 +61,15 @@ public class ClienteAction extends ActionSupport {
 		this.cliente = cliente;
 	}
 
+	public List<Cliente> getListaCliente() {
+		return listaCliente;
+	}
+
+	public void setListaCliente(List<Cliente> listaCliente) {
+		this.listaCliente = listaCliente;
+	}
+
+	
 
 	
 	
