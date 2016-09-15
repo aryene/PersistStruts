@@ -22,12 +22,12 @@ public class ItemPedido implements Serializable {
 	private float valor;
 
 	//bi-directional many-to-one association to Pedido
-	@ManyToOne(cascade=CascadeType.ALL )
+	@ManyToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name = "PEDIDO_ID",referencedColumnName="ID", insertable=false, updatable=false, nullable=false)
 	private Pedido pedido;
 
 	//bi-directional many-to-one association to Produto
-	@ManyToOne(fetch=FetchType.EAGER)
+	@ManyToOne(fetch=FetchType.EAGER )
 	@JoinColumn(name = "PRODUTO_ID",referencedColumnName="ID", insertable=false, updatable=false, nullable=false)
 	private Produto produto;
 
@@ -90,13 +90,14 @@ public static class PK implements Serializable {
 	//default serial version id, required for serializable classes.
 	private static final long serialVersionUID = 1L;
 	
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="PEDIDO_ID")
+	private int pedidoId;
+
+	
 	@Column(name="PRODUTO_ID")
 	private int produtoId;
 	
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="PEDIDO_ID")
-	private int pedidoId;
+
 
 	public PK() {
 		super();

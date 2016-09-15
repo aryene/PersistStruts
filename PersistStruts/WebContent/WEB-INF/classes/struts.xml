@@ -17,14 +17,30 @@
       </action>
 		
 		
-		 <action name="telaFornecedor"  >
+		 <action name="telaFornecedor" method="pesquisaFornecedor"  class="br.com.PersistStruts.actions.FornecedorAction"  >
 			<result>/jsp/fornecedor.jsp</result>
 		</action>
+		
+			
+		 <action name="telaPedido" method="telaPedido"  class="br.com.PersistStruts.actions.PedidoAction">
+			<result>/jsp/telaPedido.jsp</result>
+		</action>
+		
+				
+		 <action name="telaProduto" method="pesquisaProduto" class="br.com.PersistStruts.actions.ProdutoAction">
+			<result>/jsp/produto.jsp</result>
+		</action>
+		
+		
 		
    </package>
    
    <include file="struts-cliente.xml" />
    
    <include file="struts-fornecedor.xml" />
+   
+   <include file="struts-pedido.xml" />
+   
+      <include file="struts-produto.xml" />
    
 </struts>

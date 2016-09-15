@@ -12,7 +12,15 @@
             <result name="success">/jsp/fornecedor.jsp</result>
       </action>
       
-      <action name="pesquisarFornecedorNome" method="pesquisarFornecedorNome"  class="br.com.PersistStruts.actions.FornecedorAction">
+      <action name="pesquisaFornecedor" method="pesquisaFornecedor"  class="br.com.PersistStruts.actions.FornecedorAction">
+            <result name="success">/jsp/fornecedor.jsp</result>
+      </action>
+      
+       <action name="deletarFornecedor" method="deletarFornecedor"  class="br.com.PersistStruts.actions.FornecedorAction">
+            <result name="success">/jsp/fornecedor.jsp</result>
+      </action>
+      
+       <action name="alterarFornecedor" method="alterarFornecedor"  class="br.com.PersistStruts.actions.FornecedorAction">
             <result name="success">/jsp/fornecedor.jsp</result>
       </action>
    

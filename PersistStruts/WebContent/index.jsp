@@ -1,3 +1,5 @@
+<%@taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC >
@@ -19,6 +21,11 @@
 
 <h2>Bem-Vindo EBCORP seu sistema de cadastro</h2>
 
+<%-- 
+<tiles:insertDefinition name="padrao">
+
+<tiles:putAttribute name="corpo">
+ --%>
 
 <a href="telaCliente"  class="btn btn-primary"> Cadastro de Clientes</a>
 
@@ -29,7 +36,8 @@
 <a href="telaPedido" class="btn btn-primary">Cadastro de Pedidos </a>
 
 
-
+<%-- </tiles:putAttribute>
+</tiles:insertDefinition> --%>
 
 
 
