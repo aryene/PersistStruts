@@ -39,7 +39,7 @@ public abstract class GenericDao<T, ID extends Serializable> {
 	  }
 	  
 	  
-	  @Transactional
+	  @Transactional()
 	  public T save(T entidade) {
 	    return this.entityManager.merge(entidade);
 	  }
@@ -69,6 +69,22 @@ public abstract class GenericDao<T, ID extends Serializable> {
 	    final List<T> resultado = query.getResultList();
 	    return resultado;
 	  }
+	  
+	  public int countAll() {
+		    final List<T> lista = this.findAll();
+		    return lista != null ? lista.size() : 0;
+		}
+	  
+	  
+	  public List<Object[]> findBySQL(final String sql, Object... params) {
+		    final Query query = this.entityManager.createNativeQuery(sql);
+		    for (int i = 0; i < params.length; i++) {
+		      query.setParameter(i + 1, params[i]);
+		    }
+		    final List<Object[]> resultado = query.getResultList();
+		    return resultado;
+		  }
+
 
   
 }

@@ -1,6 +1,7 @@
 package br.com.PersistStruts.modelo;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -10,7 +11,6 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
@@ -73,8 +73,13 @@ public class Pedido implements Serializable {
 	}
 
 	public ItemPedido addItemPedido(ItemPedido itemPedido) {
+		if(this.getItemPedidos() == null){
+			this.setItemPedidos(new ArrayList<ItemPedido>(1));
+			
+		}
+		itemPedido.getPk().setPedidoId(this.getId());
 		getItemPedidos().add(itemPedido);
-		itemPedido.setPedido(this);
+		//itemPedido.setPedido(this);
 
 		return itemPedido;
 	}

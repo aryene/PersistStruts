@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+	
+<struts>
+  
+   <package name="Produto" extends="default" namespace="/produto"  >
+      
+      <action name="cadastraProduto" method="cadastraProduto"  class="br.com.PersistStruts.actions.ProdutoAction">
+            <result name="success">/jsp/produto.jsp</result>
+      </action>
+      
+      <action name="pesquisaProduto" method="pesquisaProduto"  class="br.com.PersistStruts.actions.ProdutoAction">
+            <result name="success">/jsp/produto.jsp</result>
+      </action>
+      
+       <action name="deletarProduto" method="deletarProduto"  class="br.com.PersistStruts.actions.ProdutoAction">
+            <result name="success">/jsp/produto.jsp</result>
+      </action>
+      
+       <action name="alterarProduto" method="alterarProduto"  class="br.com.PersistStruts.actions.ProdutoAction">
+            <result name="success">/jsp/produto.jsp</result>
+      </action>
+   
+   </package>
+</struts>

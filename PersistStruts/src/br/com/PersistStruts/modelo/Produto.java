@@ -17,14 +17,15 @@ public class Produto implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id;
+	private Integer id;
 
 	private String descricao;
 
 	private float valor;
 
 	//bi-directional many-to-many association to Fornecedor
-	@ManyToMany(cascade = {CascadeType.ALL})
+/*	@ManyToMany(cascade = {CascadeType.ALL})*/
+	@ManyToMany
 	@JoinTable(
 			name="FORNECEDOR_PRODUTO"
 			, joinColumns={

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+	
+<struts>
+  
+   <package name="pedido" extends="default" namespace="/pedido" >
+      
+      <action name="novoPedido" method="novoPedido"  class="br.com.PersistStruts.actions.PedidoAction">
+            <result name="success">/jsp/pedido.jsp</result>
+      </action>
+      
+      <action name="cadastraPedido" method="cadastraPedido"  class="br.com.PersistStruts.actions.PedidoAction">
+            <result name="success">/jsp/pedido.jsp</result>
+      </action>
+      
+       <action name="excluirPedido" method="excluirPedido"  class="br.com.PersistStruts.actions.PedidoAction">
+            <result name="success">/jsp/telaPedido.jsp</result>
+      </action>
+     
+   </package>
+</struts>
