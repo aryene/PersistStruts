@@ -46,10 +46,9 @@ public class PedidoAction extends ActionSupport {
 	
 	public String telaPedido(){
 		this.setListaPedido(this.pedidoServico.findAll());
-		this.setListaCliente(this.clienteServico.pesquisarCliente());
-		this.setListaProduto(this.produtoServico.findAll());
+
 		
-		return SUCCESS;
+		return "vixi";
 	}
 	
 	public String novoPedido(){

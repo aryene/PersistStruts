@@ -18,6 +18,7 @@
       
        <action name="excluirPedido" method="excluirPedido"  class="br.com.PersistStruts.actions.PedidoAction">
             <result name="success">/jsp/telaPedido.jsp</result>
+             <result name="vixi">/jsp/telaPedido2.jsp</result>
       </action>
      
    </package>
