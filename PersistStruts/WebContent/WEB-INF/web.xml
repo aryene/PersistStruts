@@ -2,8 +2,6 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
   
   <display-name>PersistStruts</display-name>
-  
-
 
     <welcome-file-list>
       <welcome-file>index.jsp</welcome-file>
@@ -15,21 +13,16 @@
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
 			<param-value>
-				<!-- Especifica que arquivo de configuração sera chamado, junto a instanciação  -->
 				/WEB-INF/applicationContext.xml
-			
 			</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 
-	<servlet-mapping>
+<!-- 	<servlet-mapping>
 		<servlet-name>Spring-Servlet</servlet-name>
 		<url-pattern>/</url-pattern>
-	</servlet-mapping>
- 
-   
-    
+	</servlet-mapping> -->
 
     <filter>
 		<filter-name>struts2</filter-name>
@@ -51,6 +44,7 @@
   <listener>
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 </listener>
+
 
   
   </web-app>

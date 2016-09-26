@@ -1,1 +1,1 @@
-<%-- $Id: rodape.jsp 2298 2013-08-14 13:56:07Z gardino $ --%><%@page trimDirectiveWhitespaces="true"%><%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%><%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%><div>roda  </div>
+<%-- $Id: rodape.jsp 2298 2013-08-14 13:56:07Z gardino $ --%><%@page trimDirectiveWhitespaces="true"%><%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%><%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%><div>Versao 1.0   </div>

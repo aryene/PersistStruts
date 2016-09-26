@@ -7,6 +7,11 @@
 <struts>
 
    <package name="default"  extends="struts-default">
+   
+    <action name="processaRel!*" method="{1}" class="br.com.PersistStruts.actions.RelatorioAction">
+     	<result>null</result>
+     </action>
+     
      
       <action name="inicio">
 			<result>/index.jsp</result>

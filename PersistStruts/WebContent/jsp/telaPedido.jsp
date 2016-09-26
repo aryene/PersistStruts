@@ -31,7 +31,7 @@
 <br>
 
 	
-<s:form action="novoPedido" namespace="/pedido " class="form-horizontal" theme="simple">
+<s:form action="novoPedido" namespace="/pedido" class="form-horizontal" theme="simple">
 	<button type="submit" class="btn btn-primary btn-lg btn-block">Novo Pedido</button>
 </s:form>
 
