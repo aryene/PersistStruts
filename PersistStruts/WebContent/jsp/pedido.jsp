@@ -1,23 +1,34 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-   
+	pageEncoding="UTF-8"%>
+
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@taglib prefix="s" uri="/struts-tags"%> 
+<%@taglib prefix="s" uri="/struts-tags"%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 5.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type"Pedido content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Type" Pedido
+	content="text/html; charset=UTF-8">
 <title>Tela Pedido</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous">
 
 <!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+	integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+	crossorigin="anonymous">
 
 <!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+	integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+	crossorigin="anonymous"></script>
 
-<link rel="stylesheet" href="http://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css" />
+<link rel="stylesheet"
+	href="http://code.jquery.com/ui/1.9.0/themes/base/jquery-ui.css" />
 <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
 <script src="http://code.jquery.com/ui/1.9.0/jquery-ui.js"></script>
 
@@ -33,82 +44,81 @@
 <body>
 
 
-<div class="container">
-<br>
-
-	
-<s:form action="cadastraPedido" namespace="/pedido" class="form-horizontal" theme="simple">
- 
- <div class="form-group">
-  	<label class="col-sm-2 control-label">Cliente:</label>
- <div class="col-sm-10">
-            <select class="form-control" name="pedido.cliente.id"  >
-      <c:forEach items="${listaCliente}" var="c">
-		<option value="${c.id}" >${c.nome}</option>
+	<div class="container">
 		<br>
-      </c:forEach>
-      </select> 
-  </div>
-</div>
- <div class="form-group">
-  	<label class="col-sm-2 control-label">Data:</label>
- 	 <div class="col-sm-10">
-         <input type="text" name="pedido.data" id="datepicker"  class="form-control" />
-  </div>
-</div>	
-
-<table class="table table-bordered table-hover">
- <thead>
-        <tr>
-          <th>id</th>
-          <th>Descricao</th>
-           <th>Valor</th>
-          <th style="text-align: center;width: 10px; " >Quantidade</th>
-        </tr>
-      </thead>
-      <tbody>
-      <c:forEach items="${listaProduto}" varStatus="i" var="c" >
-		<tr>
-      	<td>
-      		${c.id}
-      		  	<input type="hidden" name="listaItem[${i.index}].pk.produtoId" value="${c.id}" >
-      		<%--   	<input type="hidden" name="listaItem[${i.index}].produto.produtoId" value="${c.id}" >
-      		 --%>  	
-      	</td>
-      	<td >
-      	${c.descricao}
-      	</td>
-      	 	<td >
-      	${c.valor}
-      	      	<input type="hidden" name="listaItem[${i.index}].valor" value="${c.valor}" >
-      	</td>
-      	<td style="text-align: center">
-         	<input type="text" name="listaItem[${i.index}].quantidade"  class="form-control" />
-      	</td>
-      </tr>
-		</c:forEach>     
-      </tbody>
 
 
+		<s:form action="cadastraPedido" namespace="/pedido"
+			class="form-horizontal" theme="simple">
 
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Cliente:</label>
+				<div class="col-sm-10">
+					<select class="form-control" name="pedido.cliente.id">
+						<c:forEach items="${listaCliente}" var="c">
+							<option value="${c.id}">${c.nome}</option>
+							<br>
+						</c:forEach>
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Data:</label>
+				<div class="col-sm-10">
+					<input type="text" name="pedido.data" id="datepicker"
+						class="form-control" />
+				</div>
+			</div>
 
-</table> 
-
-
-
-
-
-	<div align="center">
-<input type="submit" class="btn btn-primary" value="Cadastra Pedido "  >
-<a href="telaPedido" class="btn btn-success" >Voltar </a>
-</div>
-</s:form>
+			<table class="table table-bordered table-hover">
+				<thead>
+					<tr>
+						<th>id</th>
+						<th>Descricao</th>
+						<th>Valor</th>
+						<th style="text-align: center; width: 10px;">Quantidade</th>
+					</tr>
+				</thead>
+				<tbody>
+					<c:forEach items="${listaProduto}" varStatus="i" var="c">
+						<tr>
+							<td>${c.id} 
+							<input type="hidden" name="listaItem[${i.index}].pk.produtoId" value="${c.id}">
+								<%--   	<input type="hidden" name="listaItem[${i.index}].produto.produtoId" value="${c.id}" >
+      		 --%>
+							</td>
+							<td>${c.descricao}</td>
+							<td>${c.valor} <input type="hidden"
+								name="listaItem[${i.index}].valor" value="${c.valor}">
+							</td>
+							<td style="text-align: center">
+								<input type="text" name="listaItem[${i.index}].quantidade" class="form-control" />
+							</td>
+						</tr>
+					</c:forEach>
+				</tbody>
 
 
 
- 
 
-      <%-- 		 
+			</table>
+
+
+
+
+
+			<div align="center">
+				<input type="submit" class="btn btn-primary"
+					value="Cadastra Pedido "> <a href="telaPedido"
+					class="btn btn-success">Voltar </a>
+			</div>
+		</s:form>
+
+
+
+
+
+		<%-- 		 
 	
 	<c:if test="${pedido != null}">
 
@@ -210,7 +220,5 @@ ${pedido.data}
 ${i.produto.descricao}
 </c:forEach>
   --%>
-
-
 </body>
 </html>

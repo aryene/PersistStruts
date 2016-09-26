@@ -12,9 +12,11 @@
     <put-attribute name="meta"      value="/WEB-INF/jsp/meta.jsp"/>
     <put-attribute name="cabecalho" value="/WEB-INF/jsp/cabecalho.jsp"/>
     <put-attribute name="rodape"    value="/WEB-INF/jsp/rodape.jsp"/>
+    <put-attribute name="menu"      value="/WEB-INF/jsp/menu.jsp"/>
     <put-attribute name="corpo"     value=""/>
   </definition>
   
+ 
   
 
   

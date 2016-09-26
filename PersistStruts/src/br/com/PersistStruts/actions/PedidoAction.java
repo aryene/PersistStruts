@@ -48,7 +48,7 @@ public class PedidoAction extends ActionSupport {
 		this.setListaPedido(this.pedidoServico.findAll());
 
 		
-		return "vixi";
+		return SUCCESS;
 	}
 	
 	public String novoPedido(){

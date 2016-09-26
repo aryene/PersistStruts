@@ -7,9 +7,11 @@
 <struts>
   
    <package name="cliente" extends="default" namespace="/cliente" >
+   
       
       <action name="cadastraCliente" method="cadastraCliente"  class="br.com.PersistStruts.actions.ClienteAction">
             <result name="success">/jsp/cliente.jsp</result>
+            <result name="input">/jsp/cliente.jsp</result>
       </action>
       
       <action name="pesquisarClienteNome" method="pesquisarClienteNome"  class="br.com.PersistStruts.actions.ClienteAction">

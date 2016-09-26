@@ -27,6 +27,7 @@ import javax.persistence.TemporalType;
 @Table(name="PEDIDO")
 @NamedQuery(name="Pedido.findAll", query="SELECT p FROM Pedido p")
 public class Pedido implements Serializable {
+	
 	private static final long serialVersionUID = 1L;
 
 	@Id
