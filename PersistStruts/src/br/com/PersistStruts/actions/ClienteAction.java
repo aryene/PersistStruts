@@ -27,7 +27,6 @@ public class ClienteAction extends ActionSupport {
 			addFieldError("cliente.cpf", "CPF INvalido.");
 			
 		}
-		
 	}
 	
 	
