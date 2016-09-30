@@ -49,6 +49,10 @@ public abstract class GenericDao<T, ID extends Serializable> {
 	  public void delete(T entity) {
 	    this.entityManager.remove(this.entityManager.contains(entity) ? entity : this.entityManager.merge(entity));
 	  }
+	  @Transactional
+	  public void delete(final ID id) {
+	    this.entityManager.remove(findById(id));
+	  }
 	  
 	  public List<T> findAll() {
 		  final CriteriaBuilder cb = this.entityManager.getCriteriaBuilder();
@@ -60,6 +64,8 @@ public abstract class GenericDao<T, ID extends Serializable> {
 	  public T findById(final ID id) {
 	    return this.entityManager.find(this.classe, id);
 	  }
+	  
+	  
 
 	  public List<T> findByNamedQuery(final String namedQuery, Object... params) {
 	    final TypedQuery<T> query = this.entityManager.createNamedQuery(namedQuery, this.classe);

@@ -61,7 +61,12 @@
    <!-- responsible for registering the necessary Spring components that power annotation-driven transaction management; 
         such as when @Transactional methods are invoked -->
  <tx:annotation-driven /> 	
-	
+ 
+ 
+
+<bean id="relatorioAction" class="br.com.PersistStruts.actions.RelatorioAction">
+         <property name="dataSource" ref="dataSource" />
+</bean>
 	
 		
 

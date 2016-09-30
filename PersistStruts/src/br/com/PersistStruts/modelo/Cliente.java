@@ -1,8 +1,23 @@
 package br.com.PersistStruts.modelo;
 
 import java.io.Serializable;
-import javax.persistence.*;
 import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 /**
  * The persistent class for the cliente database table.
@@ -30,9 +45,12 @@ public class Cliente implements Serializable {
 	private String tipoCliente;
 
 	// bi-directional many-to-one association to Pedido
-	/*
-	 * @OneToMany(mappedBy="cliente") private List<Pedido> pedidos;
-	 */
+
+	
+	@OneToMany(mappedBy="cliente", fetch = FetchType.EAGER ,cascade=CascadeType.ALL )
+	@Fetch(FetchMode.SELECT)
+	private List<Pedido> pedidos ;
+	
 	public Cliente() {
 	}
 
@@ -81,6 +99,23 @@ public class Cliente implements Serializable {
 	public void setTipoCliente(String tipoCliente) {
 		this.tipoCliente = tipoCliente;
 	}
+	
+	
+
+
+
+
+	public List<Pedido> getPedidos() {
+		return pedidos;
+	}
+
+
+
+	public void setPedidos(List<Pedido> pedidos) {
+		this.pedidos = pedidos;
+	}
+
+
 
 	@Override
 	public int hashCode() {

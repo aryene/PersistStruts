@@ -4,9 +4,9 @@
 
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="s" uri="/struts-tags"%>
-<%@taglib prefix="t" tagdir="/WEB-INF/tags"%>
+<%@taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
 
-<tiles:putAttribute name="meta">
+<%-- <tiles:putAttribute name="meta"> --%>
 
 	<br>
 	<br>
@@ -14,6 +14,12 @@
 	<br>
 	<br>
 	<br>
+		<li><a href="telaCliente" >Cadastro de Clientes</a></li>
+					<li><a href="telaFornecedor">Cadastro de Fornecedores </a></li>
+					<li><a href="telaProduto" >Cadastro de Produtos</a></li>
+					<li>	<a href="telaPedido" >Cadastro de Pedidos </a></li>
+
+	
 
 <%-- 	<nav class="navbar navbar-default" role="navigation">
 		<div class="container-fluid">
@@ -37,18 +43,7 @@
 		</div>
 	</nav> --%>
 
+<%-- </tiles:putAttribute> --%>
 
-
-
-
-		<li><a href="telaCliente" >Cadastro de Clientes</a></li>
-					<li><a href="telaFornecedor">Cadastro de Fornecedores </a></li>
-					<li><a href="telaProduto" >Cadastro de Produtos</a></li>
-					<li>	<a href="telaPedido" >Cadastro de Pedidos </a></li>
 
 	
-
-
-
-
-</tiles:putAttribute>

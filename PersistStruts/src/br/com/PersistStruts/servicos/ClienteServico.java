@@ -46,9 +46,18 @@ public class ClienteServico  {
 		return clienteDao.findById(cliente.getId());
 
 	}
-	
+	public Cliente pesquisarId(Integer id){
+		return clienteDao.findById(id);
+
+	}
+/*	
 	public void deletarCliente(Cliente cliente){
 		 clienteDao.delete(cliente);
+
+	}*/
+	
+	public void deletarCliente(Cliente cliente){
+		 clienteDao.delete(cliente.getId());
 
 	}
 
