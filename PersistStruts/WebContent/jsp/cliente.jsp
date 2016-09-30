@@ -111,13 +111,12 @@
       	</s:form>
       	</td>
       		<td style="text-align: center">
-      	<s:form action="processaRel!relConection" >
-      	<input type="hidden" value="${c.id}" name="id">
-      	<input type="hidden" value="rel03" name="codigo">
-      
-      	<button type="submit" class="btn btn-primary"  ><span class="glyphicon glyphicon-print" aria-hidden="true"></span></button>
-      	</s:form>
-      	</td>
+      			<s:form action="processaRel!relConection" >
+      				<input type="hidden" value="${c.id}" name="id">
+      				<input type="hidden" value="rel03" name="codigo">
+     	     		<button type="submit" class="btn btn-primary"  ><span class="glyphicon glyphicon-print" aria-hidden="true"></span></button>
+      			</s:form>
+      		</td>
       	
       </tr>
 		</c:forEach>
