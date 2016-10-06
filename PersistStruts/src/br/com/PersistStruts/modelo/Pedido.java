@@ -18,6 +18,9 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
 
 /**
  * The persistent class for the pedido database table.
@@ -38,6 +41,7 @@ public class Pedido implements Serializable {
 	private Date data;
 
 	//bi-directional many-to-one association to ItemPedido
+	@Fetch(FetchMode.SELECT)
 	@OneToMany(mappedBy="pedido", fetch = FetchType.EAGER, orphanRemoval = true ,cascade=CascadeType.ALL )
 	private List<ItemPedido> itemPedidos;
 
@@ -46,7 +50,7 @@ public class Pedido implements Serializable {
 	private Cliente cliente;
 
 	public Pedido() {
-		super();
+		
 	}
 
 	public int getId() {

@@ -25,12 +25,13 @@ public class ClienteAction extends ActionSupport {
 	public void validate(){
 		if (this.getCliente().getCpf().length()<11){
 			addFieldError("cliente.cpf", "CPF INvalido.");
-			
 		}
+	
+
 	}
 	
 	
-	@SkipValidation	
+	@SkipValidation
 	public String telaCliente(){
 		this.setListaCliente(this.clienteServico.pesquisarCliente());
 		return SUCCESS;

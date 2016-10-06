@@ -74,6 +74,8 @@
            <th>CPF</th>
           <th style="text-align: center">Deletar</th>
           <th style="text-align: center">Editar</th>
+           <th style="text-align: center">Imprimir</th>
+           <th style="text-align: center">Imprimir Cone</th>
         </tr>
       </thead>
       <tbody>
@@ -100,6 +102,21 @@
       	<button type="submit" class="btn btn-success"  ><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></button>
       	</s:form>
       	</td>
+      	<td style="text-align: center">
+      	<s:form action="processaRel" namespace="/cliente">
+      	<input type="hidden" value="${c.id}" name="id">
+      	<input type="hidden" value="rel02" name="codigo">
+      
+      	<button type="submit" class="btn btn-primary"  ><span class="glyphicon glyphicon-print" aria-hidden="true"></span></button>
+      	</s:form>
+      	</td>
+      		<td style="text-align: center">
+      			<s:form action="processaRel!relConection" >
+      				<input type="hidden" value="${c.id}" name="id">
+      				<input type="hidden" value="rel03" name="codigo">
+     	     		<button type="submit" class="btn btn-primary"  ><span class="glyphicon glyphicon-print" aria-hidden="true"></span></button>
+      			</s:form>
+      		</td>
       	
       </tr>
 		</c:forEach>
