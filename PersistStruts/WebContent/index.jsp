@@ -12,7 +12,7 @@
 	
 	<s:form action="processaRel">
 		<input type="hidden" name="codigo" value="rel01" >
-		<input type="submit" value="rel01"  >
+		<input type="submit" value="rel01" >
 	</s:form>
 
 
